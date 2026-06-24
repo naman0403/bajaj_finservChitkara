@@ -1,0 +1,3 @@
+const test=require('node:test'),assert=require('node:assert/strict'),{processData}=require('../server');
+test('matches challenge example',()=>{const r=processData(['A->B','A->C','B->D','C->E','E->F','X->Y','Y->Z','Z->X','P->Q','Q->R','G->H','G->H','G->I','hello','1->2','A->']);assert.deepEqual(r.summary,{total_trees:3,total_cycles:1,largest_tree_root:'A'});assert.deepEqual(r.invalid_entries,['hello','1->2','A->']);assert.deepEqual(r.duplicate_edges,['G->H']);assert.equal(r.hierarchies[0].depth,4)});
+test('first parent wins and tie is alphabetical',()=>{const r=processData(['Z->Y','B->C','A->C']);assert.equal(r.summary.largest_tree_root,'B');assert.equal(r.hierarchies.length,2)});

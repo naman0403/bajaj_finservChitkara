@@ -1,0 +1,14 @@
+{
+  "name": "hierarchy-lab-bfhl",
+  "version": "1.0.0",
+  "description": "Chitkara hierarchy processing full-stack challenge",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "node test/server.test.js"
+  },
+  "keywords": [],
+  "author": "Naman",
+  "license": "MIT",
+  "type": "commonjs"
+}
