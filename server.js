@@ -36,4 +36,4 @@ const server=http.createServer((req,res)=>{
   fs.readFile(full,(err,data)=>{if(err)return json(res,404,{error:'Not found'});const ext=path.extname(full);res.writeHead(200,{'Content-Type':ext==='.css'?'text/css':ext==='.js'?'text/javascript':'text/html'});res.end(data);});
 });
 if(require.main===module)server.listen(process.env.PORT||3000,()=>console.log('Running at http://localhost:3000'));
-module.exports={server,processData};
+module.exports={server,processData,payload};
